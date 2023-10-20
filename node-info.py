@@ -18,7 +18,7 @@ def get_data():
     ram = None
 
     for line in lines:
-        if '' in line:
+        if '•' in line:
             try:
                 transactions = int(re.search(r'\d+', line).group())
             except:
