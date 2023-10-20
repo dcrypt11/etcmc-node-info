@@ -1,3 +1,4 @@
+#!/usr/bin/python
 import web
 import screen_ocr
 import re
