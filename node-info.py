@@ -17,6 +17,9 @@ def get_data():
     cpu = None
     ram = None
 
+    balance_index = None
+
+    line_index = 0
     for line in lines:
         if '•' in line:
             try:
@@ -25,9 +28,10 @@ def get_data():
                 transactions = None
         if 'Balance' in line:
             try:
-                balance = line.replace('ETCPOW Balance: ', '')
+                balance = float(line.replace('ETCPOW Balance: ', ''))
             except:
                 balance = None
+                balance_index = line_index
         if 'CPU' in line:
             try:
                 cpu = float(line.replace('CPU: ', '').replace('%', '').replace('/0', '').replace(' ', '.'))
@@ -38,6 +42,13 @@ def get_data():
                 ram = float(line.replace('RAM: ', '').replace('%', '').replace('/0', '').replace(' ', '.'))
             except:
                 ram = None
+        line_index += 1
+
+    if balance is None and balance_index is not None:
+        try:
+            balance = float(lines[balance_index + 1])
+        except:
+            balance = None
 
     data = {
         "transactions": transactions,
