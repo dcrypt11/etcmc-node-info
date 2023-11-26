@@ -70,6 +70,9 @@ def get_data(old_balance):
     if old_balance > 1 and balance > (old_balance * 50):
         balance = None
 
+    if 0 < old_balance <= 1 and balance > (old_balance + 50):
+        balance = None
+
     data = {
         "transactions": transactions,
         "balance": balance,
