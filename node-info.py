@@ -34,7 +34,7 @@ def get_data(old_balance):
                 transactions = None
         if 'Balance' in line:
             try:
-                balance_string = line.replace('ETCPOW Balance: ', '')
+                balance_string = line.replace('ETCPOW Balance: ', '').replace('.e ','')
             except:
                 balance_string = None
                 balance_index = line_index
