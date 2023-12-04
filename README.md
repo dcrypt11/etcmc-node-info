@@ -18,3 +18,6 @@ The script extracts the information using OCR (Optical Character Recognition), s
 - Run the script just by doble-clicking on **node-info.py** or from cmd with: **python node-info.py**
 #### Additional options
 - You can change the port on which the web client will be working. For example, if you want it on port **1234**, you must start the script from cmd with:<br>**python node-info.py 1234**
+
+**ETC wallet for donations:**
+0xa2d643a1D969A2A7758453e720e5944594FaD2E2
